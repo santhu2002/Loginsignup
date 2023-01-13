@@ -1,0 +1,26 @@
+{% extends "Nav.html" %}
+
+
+{% block content %}
+<div class="cen">
+    <p><strong>Sign Up form</strong></p>
+    <form action="signup" method="post">
+        {% csrf_token %}
+        <label for="Name">Name:</label>
+        <center><input type="text" id="Name" name="name" class="name"></center>
+        <br>
+        <label for="Email">Email:</label>
+        <center><input type="text" id="Email" name="email" class="mail"></center>
+        <br>
+        <label for="Password">Password:</label>
+        <center><input type="password" name="password" id="Password" class="key"></center>
+        <br>
+        <center><input type="submit" class="submit"></center>
+    </form>
+    <div class="cen">
+        {% for m in messages%}
+        <h3>{{m}}</h3>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
